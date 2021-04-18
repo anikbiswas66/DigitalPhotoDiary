@@ -8,3 +8,4 @@ F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoD
 F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.csproj.CoreCompileInputs.cache
 F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.exe
 F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.pdb
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.Dashboard.resources
