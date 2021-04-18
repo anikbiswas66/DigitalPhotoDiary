@@ -44,7 +44,7 @@ namespace DigitalPhotoDiary
             // 
             this.button1.BackColor = System.Drawing.Color.Cyan;
             this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(370, 374);
+            this.button1.Location = new System.Drawing.Point(380, 374);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 27);
             this.button1.TabIndex = 0;
@@ -109,6 +109,7 @@ namespace DigitalPhotoDiary
             this.button2.TabIndex = 6;
             this.button2.Text = "Login";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 

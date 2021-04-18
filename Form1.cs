@@ -73,11 +73,16 @@ namespace DigitalPhotoDiary
                     if (result > 0)
                     {
                         MessageBox.Show("User Added!");
+                        Dashboard dashboard = new Dashboard();
+                        this.Hide();
+                        dashboard.Show();
+
                     }
                     else
                     {
                         MessageBox.Show("Error!");
                     }
+                    connection.Close();
                 }
             }
         }

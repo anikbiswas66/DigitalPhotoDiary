@@ -162,6 +162,7 @@ namespace DigitalPhotoDiary
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Cyan;
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Location = new System.Drawing.Point(369, 374);
