@@ -16,5 +16,10 @@ namespace DigitalPhotoDiary
         {
             InitializeComponent();
         }
+
+        private void PhotoDiary_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

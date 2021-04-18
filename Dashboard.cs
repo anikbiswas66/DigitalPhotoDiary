@@ -35,7 +35,7 @@ namespace DigitalPhotoDiary
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
             connection.Open();
-            string sql = "SELECT * FROM users WHERE username=" +(textBox2.Text);
+            string sql = "SELECT * FROM users WHERE id="+Convert.ToInt32(idtextBox1.Text);
             SqlCommand command = new SqlCommand(sql, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
@@ -48,7 +48,18 @@ namespace DigitalPhotoDiary
             {
                 MessageBox.Show("User does not found!");
             }
+
             connection.Close();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

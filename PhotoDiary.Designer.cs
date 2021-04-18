@@ -40,6 +40,7 @@ namespace DigitalPhotoDiary
             this.Name = "PhotoDiary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PhotoDiary";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhotoDiary_FormClosing);
             this.ResumeLayout(false);
 
         }
