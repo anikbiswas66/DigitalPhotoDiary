@@ -1,0 +1,10 @@
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\bin\Debug\DigitalPhotoDiary.exe.config
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\bin\Debug\DigitalPhotoDiary.exe
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\bin\Debug\DigitalPhotoDiary.pdb
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.csprojAssemblyReference.cache
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.Form1.resources
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.Properties.Resources.resources
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.csproj.GenerateResource.cache
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.csproj.CoreCompileInputs.cache
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.exe
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.pdb
