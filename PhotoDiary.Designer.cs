@@ -30,12 +30,11 @@ namespace DigitalPhotoDiary
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.EventName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.Description = new System.Windows.Forms.TextBox();
+            this.EventDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -43,8 +42,9 @@ namespace DigitalPhotoDiary
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -58,13 +58,13 @@ namespace DigitalPhotoDiary
             this.label1.TabIndex = 0;
             this.label1.Text = "Event Name";
             // 
-            // textBox1
+            // EventName
             // 
-            this.textBox1.Location = new System.Drawing.Point(138, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(236, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.EventName.Location = new System.Drawing.Point(138, 53);
+            this.EventName.Name = "EventName";
+            this.EventName.Size = new System.Drawing.Size(236, 22);
+            this.EventName.TabIndex = 1;
+            this.EventName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -77,20 +77,20 @@ namespace DigitalPhotoDiary
             this.label2.TabIndex = 2;
             this.label2.Text = "Description";
             // 
-            // textBox2
+            // Description
             // 
-            this.textBox2.Location = new System.Drawing.Point(138, 97);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(236, 22);
-            this.textBox2.TabIndex = 3;
+            this.Description.Location = new System.Drawing.Point(138, 97);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(236, 22);
+            this.Description.TabIndex = 3;
             // 
-            // dateTimePicker1
+            // EventDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(138, 142);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(236, 22);
-            this.dateTimePicker1.TabIndex = 4;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.EventDate.Location = new System.Drawing.Point(138, 142);
+            this.EventDate.Name = "EventDate";
+            this.EventDate.Size = new System.Drawing.Size(236, 22);
+            this.EventDate.TabIndex = 4;
+            this.EventDate.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label3
             // 
@@ -102,17 +102,6 @@ namespace DigitalPhotoDiary
             this.label3.Size = new System.Drawing.Size(49, 20);
             this.label3.TabIndex = 5;
             this.label3.Text = "Date";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DigitalPhotoDiary.Properties.Resources.img_94880;
-            this.pictureBox1.Location = new System.Drawing.Point(515, 22);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 152);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label4
             // 
@@ -147,6 +136,7 @@ namespace DigitalPhotoDiary
             this.button2.TabIndex = 9;
             this.button2.Text = "Modify";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -200,6 +190,17 @@ namespace DigitalPhotoDiary
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DigitalPhotoDiary.Properties.Resources.img_94880;
+            this.pictureBox1.Location = new System.Drawing.Point(515, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(273, 152);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // PhotoDiary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,10 +216,10 @@ namespace DigitalPhotoDiary
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.EventDate);
+            this.Controls.Add(this.Description);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EventName);
             this.Controls.Add(this.label1);
             this.Name = "PhotoDiary";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -226,8 +227,8 @@ namespace DigitalPhotoDiary
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PhotoDiary_FormClosing);
             this.Load += new System.EventHandler(this.PhotoDiary_Load);
             this.Click += new System.EventHandler(this.PhotoDiary_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,10 +237,10 @@ namespace DigitalPhotoDiary
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox EventName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox Description;
+        private System.Windows.Forms.DateTimePicker EventDate;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;

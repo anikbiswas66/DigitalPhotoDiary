@@ -45,15 +45,15 @@ namespace DigitalPhotoDiary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "")
+            if (EventName.Text == "")
             {
                 MessageBox.Show("Event Name can not be empty");
             }
-            else if (textBox2.Text == "")
+            else if (Description.Text == "")
             {
                 MessageBox.Show("Description can not be empty");
             }
-            else if (dateTimePicker1.Text == "")
+            else if (EventDate.Text == "")
             {
                 MessageBox.Show("Date can not be empty");
             }
@@ -61,7 +61,7 @@ namespace DigitalPhotoDiary
             {
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
                 connection.Open();
-                string sql = "INSERT INTO events(ename,edescription,date,photo) VALUES('" + textBox1.Text + "','" + textBox2.Text + "','" + dateTimePicker1.Text + "','" + pictureBox1.Text + "')";
+                string sql = "INSERT INTO events(ename,edescription,date,photo) VALUES('" + EventName.Text + "','" + Description.Text + "','" + EventDate.Text + "','" + pictureBox1.Text + "')";
                 SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@photo", SavePhoto());
                 command.ExecuteNonQuery();
@@ -139,8 +139,8 @@ namespace DigitalPhotoDiary
 
         private void button5_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            textBox2.Clear();
+            EventName.Clear();
+            Description.Clear();
             pictureBox1.Image = Resources.img_94880;
         }
 
@@ -161,6 +161,14 @@ namespace DigitalPhotoDiary
             //    //DataGridView row = this.dataGridView1.Rows[e.RowIndex];
             //    //pictureBox1.Image = GetPhoto((byte[])row.Cells[7].Value);
             //}
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Modify modify = new Modify();
+            this.Hide();
+            modify.Show();
 
         }
     }

@@ -10,3 +10,4 @@ F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoD
 F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.pdb
 F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.Dashboard.resources
 F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.PhotoDiary.resources
+F:\Aiub\10th semester\C#\My Assignment\DigitalPhotoDiary\obj\Debug\DigitalPhotoDiary.Modify.resources
