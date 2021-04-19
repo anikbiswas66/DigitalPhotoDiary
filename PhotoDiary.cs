@@ -65,6 +65,16 @@ namespace DigitalPhotoDiary
                 command.Parameters.AddWithValue("@photo", SavePhoto());
                 command.ExecuteNonQuery();
                 int result = command.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Event Added!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Error!");
+                }
+                connection.Close();
             }
         }
         private byte[] SavePhoto()
@@ -80,6 +90,16 @@ namespace DigitalPhotoDiary
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void PhotoDiary_Load(object sender, EventArgs e)
         {
 
         }
