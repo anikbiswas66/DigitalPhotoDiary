@@ -44,17 +44,14 @@ namespace DigitalPhotoDiary
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
             connection.Open();
-            string sql = "DELETE events WHERE id=" + Convert.ToInt32(textBox3.Text);
+            string sql = "DELETE FROM events WHERE id="+Convert.ToInt32(textBox3.Text);
             SqlCommand command = new SqlCommand(sql, connection);
             //command.Parameters.AddWithValue("@photo", SavePhoto());
-            command.ExecuteNonQuery();
+            //command.ExecuteNonQuery();
             int result = command.ExecuteNonQuery();
             if (result > 0)
             {
                 MessageBox.Show("Event Deleted!");
-                PhotoDiary photoDiary = new PhotoDiary();
-                photoDiary.Show();
-                this.Hide();
 
             }
             else
