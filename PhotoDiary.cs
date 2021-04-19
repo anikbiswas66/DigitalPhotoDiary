@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalPhotoDiary.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -75,7 +76,21 @@ namespace DigitalPhotoDiary
                     MessageBox.Show("Error!");
                 }
                 connection.Close();
+                GetValue();
             }
+        }
+        private void GetValue()
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
+            DataTable dataTable = new DataTable();
+            connection.Open();
+            string sql = "Select * From events";
+            SqlCommand command = new SqlCommand(sql, connection);
+            SqlDataReader sqlDataReader = command.ExecuteReader();
+            dataTable.Load(sqlDataReader);
+            connection.Close();
+            dataGridView1.DataSource = dataTable;
+
         }
         private byte[] SavePhoto()
         {
@@ -101,6 +116,51 @@ namespace DigitalPhotoDiary
 
         private void PhotoDiary_Load(object sender, EventArgs e)
         {
+            GetValue();
+            //SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
+            //connection.Open();
+            //string sql = "SELECT = FROM events";
+            //SqlCommand command = new SqlCommand(sql, connection);
+            //List<events> events = new List<events>();
+            //SqlDataReader reader = command.ExecuteReader();
+            //while(reader.Read())
+            //{
+            //    events events1 = new events();
+            //    events1.id = (int)reader["id"];
+            //    events1.ename = reader["ename"].ToString();
+            //    events1.description = reader["edescription"].ToString();
+            //    events1.date= reader["date"].ToString();
+            //    events1.Add(events1);
+            //}
+            //connection.Close();
+            //dataGridView1.DataSource = events;
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            pictureBox1.Image = Resources.img_94880;
+        }
+
+        private void PhotoDiary_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //if(e.RowIndex>=0)
+            //{
+            //    //DataGridView row = this.dataGridView1.Rows[e.RowIndex];
+            //    //pictureBox1.Image = GetPhoto((byte[])row.Cells[7].Value);
+            //}
 
         }
     }

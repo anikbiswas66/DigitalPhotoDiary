@@ -8,9 +8,14 @@ namespace DigitalPhotoDiary
 {
     class events
     {
-        public int Id { get; set; }
-        public string EventName { get; set; }
-        public string Description { get; set; }
+        //public int id { get; set; }
+        //public string ename { get; set; }
+        //public string description { get; set; }
+        //public string date { get; set; }
 
+        //internal void Add(events events1)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
