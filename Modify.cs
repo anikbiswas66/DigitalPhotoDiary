@@ -33,18 +33,19 @@ namespace DigitalPhotoDiary
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
             connection.Open();
-            string sql = "SELECT = FROM events WHERE id="+Convert.ToInt32(textBox3.Text);
+            string sql = "SELECT * FROM events WHERE id="+Convert.ToInt32(textBox3.Text);
             SqlCommand command = new SqlCommand(sql, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
             {
-                textBox1.Text= reader["Name"].ToString();
-                textBox2.Text = reader["Description"].ToString();
-                dateTimePicker1.Text = reader["Date"].ToString();
+                textBox1.Text= reader["ename"].ToString();
+                textBox2.Text = reader["edescription"].ToString();
+                dateTimePicker1.Text = reader["date"].ToString();
             }
             else
             {
                 MessageBox.Show("Does not match!");
+                textBox1.Text = textBox2.Text = dateTimePicker1.Text = "";
             }
             connection.Close();
         }
@@ -52,6 +53,78 @@ namespace DigitalPhotoDiary
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Event Name can not be empty");
+            }
+            else if (textBox2.Text == "")
+            {
+                MessageBox.Show("Description can not be empty");
+            }
+            else if (dateTimePicker1.Text == "")
+            {
+                MessageBox.Show("Date can not be empty");
+            }
+            else
+            {
+                SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
+                connection.Open();
+                string sql = "UPDATE events SET ename='"+textBox1.Text+"',edescription='"+textBox2.Text+"',date='"+dateTimePicker1.Text+"' WHERE id="+ Convert.ToInt32(textBox3.Text);
+                SqlCommand command = new SqlCommand(sql, connection);
+                //command.Parameters.AddWithValue("@photo", SavePhoto());
+                command.ExecuteNonQuery();
+                int result = command.ExecuteNonQuery();
+                if (result > 0)
+                {
+                    MessageBox.Show("Event Updated!");
+
+                }
+                else
+                {
+                    MessageBox.Show("Error!");
+                }
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PhotoDiary photoDiary = new PhotoDiary();
+            this.Hide();
+            photoDiary.Show();
         }
     }
 }

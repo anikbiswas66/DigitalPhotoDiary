@@ -171,5 +171,12 @@ namespace DigitalPhotoDiary
             modify.Show();
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Delete delete = new Delete();
+            this.Hide();
+            delete.Show();
+        }
     }
 }
