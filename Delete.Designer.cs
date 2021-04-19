@@ -82,6 +82,7 @@ namespace DigitalPhotoDiary
             this.button1.TabIndex = 16;
             this.button1.Text = "Delete";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -96,6 +97,7 @@ namespace DigitalPhotoDiary
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(279, 258);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(223, 22);
@@ -103,6 +105,7 @@ namespace DigitalPhotoDiary
             // 
             // textBox2
             // 
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(279, 202);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(223, 22);
@@ -121,6 +124,7 @@ namespace DigitalPhotoDiary
             // 
             // textBox1
             // 
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(279, 142);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(223, 22);
@@ -155,6 +159,7 @@ namespace DigitalPhotoDiary
             this.Controls.Add(this.label1);
             this.Name = "Delete";
             this.Text = "Delete";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Delete_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

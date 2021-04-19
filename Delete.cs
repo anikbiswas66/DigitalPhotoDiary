@@ -23,7 +23,7 @@ namespace DigitalPhotoDiary
         {
             SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
             connection.Open();
-            string sql = "SELECT * FROM events WHERE id=" + Convert.ToInt32(textBox3.Text);
+            string sql = "SELECT * FROM events WHERE id=" +Convert.ToInt32(textBox3.Text);
             SqlCommand command = new SqlCommand(sql, connection);
             SqlDataReader reader = command.ExecuteReader();
             if (reader.Read())
@@ -35,8 +35,38 @@ namespace DigitalPhotoDiary
             else
             {
                 MessageBox.Show("Does not match!");
+                textBox1.Text = textBox2.Text = dateTimePicker1.Text = "";
             }
             connection.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
+            connection.Open();
+            string sql = "DELETE events WHERE id=" + Convert.ToInt32(textBox3.Text);
+            SqlCommand command = new SqlCommand(sql, connection);
+            //command.Parameters.AddWithValue("@photo", SavePhoto());
+            command.ExecuteNonQuery();
+            int result = command.ExecuteNonQuery();
+            if (result > 0)
+            {
+                MessageBox.Show("Event Deleted!");
+                PhotoDiary photoDiary = new PhotoDiary();
+                photoDiary.Show();
+                this.Hide();
+
+            }
+            else
+            {
+                MessageBox.Show("Error!");
+            }
+            connection.Close();
+        }
+
+        private void Delete_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -78,7 +78,7 @@ namespace DigitalPhotoDiary
             {
                 SqlConnection connection = new SqlConnection(ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString);
                 connection.Open();
-                string sql = "UPDATE events SET ename='"+textBox1.Text+"',edescription='"+textBox2.Text+"',date='"+dateTimePicker1.Text+"' WHERE id="+ Convert.ToInt32(textBox3.Text);
+                string sql = "UPDATE events SET ename='"+textBox1.Text+"',edescription='"+textBox2.Text+"',date='"+dateTimePicker1.Text+"' WHERE id="+Convert.ToInt32(textBox3.Text);
                 SqlCommand command = new SqlCommand(sql, connection);
                 //command.Parameters.AddWithValue("@photo", SavePhoto());
                 command.ExecuteNonQuery();
@@ -92,6 +92,7 @@ namespace DigitalPhotoDiary
                 {
                     MessageBox.Show("Error!");
                 }
+                connection.Close();
             }
         }
 
@@ -118,13 +119,6 @@ namespace DigitalPhotoDiary
         private void label1_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            PhotoDiary photoDiary = new PhotoDiary();
-            this.Hide();
-            photoDiary.Show();
         }
     }
 }
